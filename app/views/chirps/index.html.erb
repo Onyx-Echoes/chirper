@@ -1,0 +1,24 @@
+<h3>My chirps</h3>
+
+<table>
+  <tr>
+    <th>Body</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @chirps.each do |chirp| %>
+  <tr>
+    <td><%= chirp.body %></td>
+    <td><%= link_to 'Show', chirp %></td>
+    <td><%= link_to 'Edit', edit_chirp_path(chirp) %></td>
+    <td><%= link_to 'Destroy', chirp, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Chirp', new_chirp_path %>
+<%= link_to 'Listen', listen_chirps_path %>

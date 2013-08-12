@@ -1,0 +1,11 @@
+<h3>Listen to Chirps</h3>
+
+<% @chirps.each do |chirp| %>
+  <div>
+    <p>
+      <%= chirp.body %> <span style="font-size:8px">by <%= chirp.user.name %></span>
+    </p>
+  </div>
+<% end %>
+
+<%= link_to 'My Chirps', chirps_path %>

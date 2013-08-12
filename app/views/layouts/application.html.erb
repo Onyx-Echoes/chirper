@@ -2,13 +2,19 @@
 <html>
 <head>
   <title>Chirper</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
+<center><h1>Chirper</h1></center>
+
+
+<%= link_to "Logout from '#{current_user.name}'", logout_path if user_logged_in? %>
+
 <%= yield %>
+
 
 </body>
 </html>
